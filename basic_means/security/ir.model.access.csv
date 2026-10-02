@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_basic_means_assignment_user,basic.means.assignment.user,model_basic_means_assignment,base.group_user,1,0,0,0
+access_basic_means_assignment_manager,basic.means.assignment.manager,model_basic_means_assignment,maintenance.group_equipment_manager,1,1,1,1

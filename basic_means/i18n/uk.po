@@ -1,0 +1,775 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* basic_means
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-02 19:22+0000\n"
+"PO-Revision-Date: 2026-10-02 19:22+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#. module: basic_means
+#: model:ir.actions.report,print_report_name:basic_means.action_report_basic_means_act
+msgid "'Act - %s - %s' % (object.name, object.employee_id.name)"
+msgstr "'Акт - %s - %s' % (object.name, object.employee_id.name)"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "(signature)"
+msgstr "(підпис)"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "(the \"Recipient\") accepts for use the following fixed asset:"
+msgstr "(«Отримувач») приймає в користування такий об'єкт основних засобів:"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid ""
+"(the \"Transferor\")\n"
+"                    hands over, and the employee"
+msgstr ""
+"(«Передавач»)\n"
+"                    передає, а працівник"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "<i class=\"fa fa-cube me-1\" title=\"Fixed Asset\"/>"
+msgstr "<i class=\"fa fa-cube me-1\" title=\"Основний засіб\"/>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "<i class=\"fa fa-user me-1\" title=\"Employee\"/>"
+msgstr "<i class=\"fa fa-user me-1\" title=\"Співробітник\"/>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "<span>days</span>"
+msgstr "<span>дн.</span>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Accepted (Warehouse):</strong>"
+msgstr "<strong>Прийняв (склад):</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Days in use:</strong>"
+msgstr "<strong>Днів у користуванні:</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Handed over (Transferor):</strong>"
+msgstr "<strong>Передав (Передавач):</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Issue date:</strong>"
+msgstr "<strong>Дата видачі:</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Note:</strong>"
+msgstr "<strong>Примітка:</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Received (Recipient):</strong>"
+msgstr "<strong>Отримав (Отримувач):</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Return date:</strong>"
+msgstr "<strong>Дата повернення:</strong>"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "<strong>Returned (Employee):</strong>"
+msgstr "<strong>Повернув (співробітник):</strong>"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_needaction
+msgid "Action Needed"
+msgstr "Необхідна дія"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_ids
+msgid "Activities"
+msgstr "Дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Оформлення виключення дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_state
+msgid "Activity State"
+msgstr "Стан дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Іконка типу дії"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Archived Fixed Assets"
+msgstr "Архівні ОЗ"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Assign the fixed asset to an employee"
+msgstr "Закріпити ОЗ за співробітником"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Assign the fixed asset to the employee"
+msgstr "Закріпити ОЗ за співробітником"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_attachment_count
+msgid "Attachment Count"
+msgstr "Кількість прикріплень"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Category"
+msgstr "Категорія"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__color
+msgid "Color Index"
+msgstr "Індекс кольору"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__company_id
+msgid "Company"
+msgstr "Компанія"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Computers"
+msgstr "Комп'ютери"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Condition of the fixed asset, accessories, comments..."
+msgstr "Стан ОЗ, комплектація, коментарі..."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Cost"
+msgstr "Вартість"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__create_uid
+msgid "Created by"
+msgstr "Створив"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__create_date
+msgid "Created on"
+msgstr "Створено"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__basic_means_assignment_id
+msgid "Current Issuance"
+msgstr "Поточна видача"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__days_count
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "Days in Use"
+msgstr "Днів у користуванні"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "Delete"
+msgstr "Видалити"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__department_id
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Department"
+msgstr "Відділ"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Developer"
+msgstr "Розробник"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__display_name
+#: model:ir.model.fields,field_description:basic_means.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__display_name
+msgid "Display Name"
+msgstr "Відображувана назва"
+
+#. module: basic_means
+#: model:ir.model.fields.selection,name:basic_means.selection__basic_means_assignment__state__draft
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Draft"
+msgstr "Чернетка"
+
+#. module: basic_means
+#: model:ir.model,name:basic_means.model_hr_employee
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__employee_id
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Employee"
+msgstr "Співробітник"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__category_id
+msgid "Equipment Category"
+msgstr "Категорія обладнання"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "FA/2026/00001"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__equipment_id
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Fixed Asset"
+msgstr "Основний засіб"
+
+#. module: basic_means
+#: model:ir.model,name:basic_means.model_basic_means_assignment
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Fixed Asset Issuance"
+msgstr "Видача ОЗ"
+
+#. module: basic_means
+#: model:ir.actions.report,name:basic_means.action_report_basic_means_act
+msgid "Fixed Asset Issuance Act"
+msgstr "Акт видачі ОЗ"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Fixed Asset Issuance Act No."
+msgstr "Акт видачі ОЗ №"
+
+#. module: basic_means
+#: model:ir.actions.act_window,name:basic_means.basic_means_assignment_action
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_list
+msgid "Fixed Asset Issuances"
+msgstr "Видачі ОЗ"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.hr_employee_view_form_inherit_basic_means
+msgid "Fixed Assets"
+msgstr "ОЗ"
+
+#. module: basic_means
+#: model:ir.ui.menu,name:basic_means.menu_basic_means_root
+msgid "Fixed Assets Issuance"
+msgstr "Видача ОЗ"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_hr_employee__basic_means_assignment_ids
+msgid "Fixed Assets Issuances"
+msgstr "Видачі ОЗ"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_follower_ids
+msgid "Followers"
+msgstr "Підписники"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Підписники (Партнери)"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Іконка з Font awesome, напр. fa-tasks"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__has_message
+msgid "Has Message"
+msgstr "Є повідомлення"
+
+#. module: basic_means
+#: model:ir.ui.menu,name:basic_means.menu_basic_means_kanban_employee
+msgid "History by Employee"
+msgstr "Історія за співробітниками"
+
+#. module: basic_means
+#: model:ir.ui.menu,name:basic_means.menu_basic_means_kanban_equipment
+msgid "History by Fixed Asset"
+msgstr "Історія за ОЗ"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__id
+#: model:ir.model.fields,field_description:basic_means.field_hr_employee__id
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__id
+msgid "ID"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_exception_icon
+msgid "Icon"
+msgstr "Іконка"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Іконка для визначення виключення дії."
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Якщо позначено, нові повідомлення потребують вашої уваги."
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__message_has_error
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Якщо позначено, деякі повідомлення мають помилку доставки."
+
+#. module: basic_means
+#: model:ir.model.fields.selection,name:basic_means.selection__maintenance_equipment__basic_means_state__in_stock
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_search_inherit_basic_means
+msgid "In Stock"
+msgstr "На складі"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_is_follower
+msgid "Is Follower"
+msgstr "Стежить"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__basic_means_assignment_ids
+msgid "Issuance History"
+msgstr "Історія видачі"
+
+#. module: basic_means
+#: model:ir.actions.act_window,name:basic_means.basic_means_assignment_action_kanban_employee
+msgid "Issuance History by Employee"
+msgstr "Історія видачі за співробітниками"
+
+#. module: basic_means
+#: model:ir.actions.act_window,name:basic_means.basic_means_assignment_action_kanban_equipment
+msgid "Issuance History by Fixed Asset"
+msgstr "Історія видачі за ОЗ"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__basic_means_state
+msgid "Issuance Status"
+msgstr "Статус видачі"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_maintenance_equipment__basic_means_assignment_count
+#: model:ir.ui.menu,name:basic_means.menu_basic_means_assignment
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Issuances"
+msgstr "Видачі"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_list
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Issue"
+msgstr "Видано"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__date_issue
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Issue Date"
+msgstr "Дата видачі"
+
+#. module: basic_means
+#: model_terms:ir.actions.act_window,help:basic_means.basic_means_assignment_action
+msgid "Issue the first fixed asset to an employee"
+msgstr "Видайте перший ОЗ співробітнику"
+
+#. module: basic_means
+#: model:ir.model.fields.selection,name:basic_means.selection__basic_means_assignment__state__issued
+#: model:ir.model.fields.selection,name:basic_means.selection__maintenance_equipment__basic_means_state__issued
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_search_inherit_basic_means
+msgid "Issued"
+msgstr "Видано"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_hr_employee__basic_means_issued_count
+msgid "Issued Fixed Assets"
+msgstr "Видані ОЗ"
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid "Issued to %(employee)s, act %(link)s"
+msgstr "Видано співробітнику %(employee)s, акт %(link)s"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__job_title
+msgid "Job Title"
+msgstr "Посада"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Laptop"
+msgstr "Ноутбук"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__write_uid
+msgid "Last Updated by"
+msgstr "Востаннє оновив"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__write_date
+msgid "Last Updated on"
+msgstr "Останнє оновлення"
+
+#. module: basic_means
+#: model:ir.model,name:basic_means.model_maintenance_equipment
+msgid "Maintenance Equipment"
+msgstr "Обладнання"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Marc Demo"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_has_error
+msgid "Message Delivery error"
+msgstr "Помилка доставлення повідомлення"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_ids
+msgid "Messages"
+msgstr "Повідомлення"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Mitchell Admin"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__model
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Model"
+msgstr "Модель"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Дедлайн моєї дії"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "My Company"
+msgstr "Моя компанія"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "My Issuances"
+msgstr "Мої видачі"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Дедлайн наступної дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_summary
+msgid "Next Activity Summary"
+msgstr "Підсумок наступної дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_type_id
+msgid "Next Activity Type"
+msgstr "Тип наступної дії"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__note
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Note"
+msgstr "Примітка"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__name
+msgid "Number"
+msgstr "Номер"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Кількість дій"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__days_count
+msgid ""
+"Number of days from the issue date to the return date (or to today if not "
+"returned yet)."
+msgstr ""
+"Кількість днів від дати видачі до дати повернення (або до сьогодні, якщо ще "
+"не повернено)."
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_has_error_counter
+msgid "Number of errors"
+msgstr "Кількість помилок"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "Кількість повідомлень, які потребують дії"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Кількість повідомлень з помилкою доставки"
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid ""
+"Only draft issuances can be deleted. Issued or returned fixed assets are "
+"kept in the history."
+msgstr ""
+"Видаляти можна лише чернетки. Видані та повернені ОЗ зберігаються в історії."
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid "Only draft issuances can be issued."
+msgstr "Видати можна лише чернетку."
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid "Only issued fixed assets can be returned."
+msgstr "Повернути можна лише виданий ОЗ."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "Open"
+msgstr "Відкрити"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Period"
+msgstr "Період"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__user_id
+msgid "Person who hands the fixed asset over to the employee."
+msgstr "Особа, яка передає ОЗ співробітнику (МВО)."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "Print Act"
+msgstr "Друк акту"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "R&amp;D"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__user_id
+msgid "Responsible"
+msgstr "Відповідальний"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__activity_user_id
+msgid "Responsible User"
+msgstr "Відповідальний користувач"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_list
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Return"
+msgstr "Повернути"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__date_return
+msgid "Return Date"
+msgstr "Дата повернення"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Return the fixed asset from the employee to the warehouse"
+msgstr "Повернути ОЗ від співробітника на склад"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.maintenance_equipment_view_form_inherit_basic_means
+msgid "Return the fixed asset to the warehouse?"
+msgstr "Повернути ОЗ на склад?"
+
+#. module: basic_means
+#: model:ir.model.fields.selection,name:basic_means.selection__basic_means_assignment__state__returned
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Returned"
+msgstr "Повернено"
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid "Returned to the warehouse from %(employee)s, act %(link)s"
+msgstr "Повернено на склад від співробітника %(employee)s, акт %(link)s"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Помилка доставки SMS"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "SN-0001"
+msgstr ""
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Search Fixed Asset Issuances"
+msgstr "Пошук видач ОЗ"
+
+#. module: basic_means
+#: model_terms:ir.actions.act_window,help:basic_means.basic_means_assignment_action
+msgid ""
+"Select a fixed asset (equipment) and an employee, then press \"Issue\".\n"
+"                When the employee gives it back, press \"Return\"."
+msgstr ""
+"Оберіть ОЗ (обладнання) і співробітника, потім натисніть «Видано».\n"
+"                Коли співробітник поверне ОЗ, натисніть «Повернути»."
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__serial_no
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "Serial Number"
+msgstr "Серійний номер"
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__state
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_search
+msgid "Status"
+msgstr "Статус"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Етап у залежності від дій\n"
+"Прострочено: термін виконання вже минув\n"
+"Сьогодні: дата дії сьогодні\n"
+"Заплановано: майбутні дії."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "The company"
+msgstr "Компанія"
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid ""
+"The fixed asset \"%(equipment)s\" is already issued to %(employee)s "
+"(%(number)s). Return it to the warehouse first."
+msgstr ""
+"ОЗ «%(equipment)s» вже видано співробітнику %(employee)s (%(number)s). "
+"Спочатку поверніть його на склад."
+
+#. module: basic_means
+#. odoo-python
+#: code:addons/basic_means/models/basic_means_assignment.py:0
+msgid ""
+"The fixed asset \"%(equipment)s\" is already issued to %(employee)s for this"
+" period (%(number)s, from %(date)s)."
+msgstr ""
+"ОЗ «%(equipment)s» на цей період вже видано співробітнику %(employee)s "
+"(%(number)s, з %(date)s)."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid ""
+"The fixed asset was handed over in working condition and complete. The Recipient is\n"
+"                    responsible for keeping it safe and undertakes to return it to the warehouse on demand\n"
+"                    or upon dismissal."
+msgstr ""
+"ОЗ передано у справному стані та в повній комплектації. Отримувач\n"
+"                    несе відповідальність за його збереження та зобов'язується повернути його на склад на вимогу\n"
+"                    або у разі звільнення."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "The fixed asset was returned to the warehouse on"
+msgstr "ОЗ повернено на склад"
+
+#. module: basic_means
+#: model:ir.model.constraint,message:basic_means.constraint_basic_means_assignment_date_return_check
+msgid "The return date can not be earlier than the issue date."
+msgstr "Дата повернення не може бути раніше дати видачі."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "ThinkPad T14"
+msgstr ""
+
+#. module: basic_means
+#: model:ir.model.constraint,message:basic_means.constraint_basic_means_assignment_equipment_issued_unique
+msgid "This fixed asset is already issued to an employee. Return it first."
+msgstr "Цей ОЗ вже видано співробітнику. Спочатку поверніть його."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_form
+msgid "Today, when returned"
+msgstr "Сьогодні, у момент повернення"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Тип дії виключення на записі."
+
+#. module: basic_means
+#: model:ir.model.fields,field_description:basic_means.field_basic_means_assignment__website_message_ids
+msgid "Website Messages"
+msgstr "Повідомлення з веб-сайту"
+
+#. module: basic_means
+#: model:ir.model.fields,help:basic_means.field_basic_means_assignment__website_message_ids
+msgid "Website communication history"
+msgstr "Історія бесіди на сайті"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "dated"
+msgstr "від"
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.basic_means_assignment_view_kanban
+msgid "days"
+msgstr "дн."
+
+#. module: basic_means
+#: model_terms:ir.ui.view,arch_db:basic_means.report_basic_means_act_document
+msgid "represented by"
+msgstr "в особі"

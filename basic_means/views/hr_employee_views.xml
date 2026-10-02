@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_employee_view_form_inherit_basic_means" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.basic.means</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr_maintenance.hr_employee_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_view_basic_means_assignments" type="object"
+                    class="oe_stat_button" icon="fa-history"
+                    groups="maintenance.group_equipment_manager">
+                    <field name="basic_means_issued_count" string="Fixed Assets" widget="statinfo"/>
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>

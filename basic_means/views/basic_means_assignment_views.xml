@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="basic_means_assignment_view_form" model="ir.ui.view">
+        <field name="name">basic.means.assignment.form</field>
+        <field name="model">basic.means.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Fixed Asset Issuance">
+                <header>
+                    <button name="action_issue" string="Issue" type="object" class="btn-primary"
+                        invisible="state != 'draft'" groups="maintenance.group_equipment_manager"
+                        help="Assign the fixed asset to the employee"/>
+                    <button name="action_return" string="Return" type="object" class="btn-primary"
+                        invisible="state != 'issued'" groups="maintenance.group_equipment_manager"
+                        confirm="Return the fixed asset to the warehouse?"
+                        help="Return the fixed asset from the employee to the warehouse"/>
+                    <button name="action_print_act" string="Print Act" type="object"
+                        invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,issued,returned"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Returned" bg_color="text-bg-secondary" invisible="state != 'returned'"/>
+                    <div class="oe_title">
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Fixed Asset">
+                            <field name="equipment_id" readonly="state != 'draft'"
+                                domain="[('basic_means_state', '=', 'in_stock')]"
+                                context="{'default_company_id': company_id}"/>
+                            <field name="model"/>
+                            <field name="serial_no"/>
+                            <field name="category_id"/>
+                        </group>
+                        <group string="Employee">
+                            <field name="employee_id" readonly="state != 'draft'" widget="many2one_avatar_employee"/>
+                            <field name="job_title"/>
+                            <field name="department_id" readonly="state != 'draft'"/>
+                            <field name="user_id" readonly="state != 'draft'" widget="many2one_avatar_user"/>
+                        </group>
+                        <group string="Period">
+                            <field name="date_issue" readonly="state != 'draft'"/>
+                            <field name="date_return" invisible="state == 'draft'" readonly="state == 'returned'"
+                                placeholder="Today, when returned"/>
+                            <label for="days_count"/>
+                            <div class="o_row">
+                                <field name="days_count" class="oe_inline"/> <span>days</span>
+                            </div>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company" readonly="state != 'draft'"/>
+                            <field name="company_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Note" name="note">
+                            <field name="note" placeholder="Condition of the fixed asset, accessories, comments..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="basic_means_assignment_view_list" model="ir.ui.view">
+        <field name="name">basic.means.assignment.list</field>
+        <field name="model">basic.means.assignment</field>
+        <field name="arch" type="xml">
+            <list string="Fixed Asset Issuances" sample="1"
+                decoration-info="state == 'draft'" decoration-muted="state == 'returned'">
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="model" optional="show"/>
+                <field name="serial_no" optional="hide"/>
+                <field name="category_id" optional="hide"/>
+                <field name="employee_id" widget="many2one_avatar_employee"/>
+                <field name="department_id" optional="show"/>
+                <field name="date_issue"/>
+                <field name="date_return" optional="show"/>
+                <field name="days_count"/>
+                <field name="user_id" widget="many2one_avatar_user" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="state" widget="badge"
+                    decoration-info="state == 'draft'" decoration-success="state == 'issued'"/>
+                <button name="action_issue" string="Issue" type="object" icon="fa-sign-out"
+                    invisible="state != 'draft'" groups="maintenance.group_equipment_manager"/>
+                <button name="action_return" string="Return" type="object" icon="fa-sign-in"
+                    invisible="state != 'issued'" groups="maintenance.group_equipment_manager"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="basic_means_assignment_view_kanban" model="ir.ui.view">
+        <field name="name">basic.means.assignment.kanban</field>
+        <field name="model">basic.means.assignment</field>
+        <field name="arch" type="xml">
+            <kanban highlight_color="color" default_group_by="equipment_id" quick_create="false"
+                group_create="false" group_delete="false" group_edit="false" sample="1">
+                <field name="state"/>
+                <progressbar field="state" colors='{"issued": "success", "draft": "info"}'/>
+                <templates>
+                    <t t-name="menu">
+                        <a role="menuitem" type="open" class="dropdown-item">Open</a>
+                        <a role="menuitem" type="object" name="action_print_act" class="dropdown-item"
+                            t-if="record.state.raw_value != 'draft'">Print Act</a>
+                        <t t-if="widget.deletable and record.state.raw_value == 'draft'">
+                            <a role="menuitem" type="delete" class="dropdown-item">Delete</a>
+                        </t>
+                        <field name="color" widget="kanban_color_picker"/>
+                    </t>
+                    <t t-name="card">
+                        <div class="d-flex">
+                            <field name="name" class="fw-bold fs-5"/>
+                            <field name="state" widget="badge" class="ms-auto"
+                                decoration-info="state == 'draft'" decoration-success="state == 'issued'"/>
+                        </div>
+                        <div>
+                            <i class="fa fa-cube me-1" title="Fixed Asset"/><field name="equipment_id"/>
+                            <span t-if="record.model.raw_value" class="text-muted"> (<field name="model"/>)</span>
+                        </div>
+                        <div><i class="fa fa-user me-1" title="Employee"/><field name="employee_id"/></div>
+                        <div class="text-muted">
+                            <field name="date_issue"/>
+                            <t t-if="record.date_return.raw_value"> — <field name="date_return"/></t>
+                        </div>
+                        <footer>
+                            <div class="d-flex align-items-center">
+                                <span class="badge rounded-pill text-bg-light" title="Days in Use">
+                                    <field name="days_count"/> days
+                                </span>
+                                <field name="activity_ids" widget="kanban_activity" class="ms-2"/>
+                            </div>
+                            <div class="d-flex ms-auto align-items-center">
+                                <button name="action_issue" type="object" class="btn btn-sm btn-primary me-1"
+                                    invisible="state != 'draft'" groups="maintenance.group_equipment_manager">Issue</button>
+                                <button name="action_return" type="object" class="btn btn-sm btn-secondary me-1"
+                                    invisible="state != 'issued'" groups="maintenance.group_equipment_manager">Return</button>
+                                <field name="employee_id" widget="many2one_avatar_employee"/>
+                            </div>
+                        </footer>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="basic_means_assignment_view_search" model="ir.ui.view">
+        <field name="name">basic.means.assignment.search</field>
+        <field name="model">basic.means.assignment</field>
+        <field name="arch" type="xml">
+            <search string="Search Fixed Asset Issuances">
+                <field name="name"/>
+                <field name="equipment_id"/>
+                <field name="serial_no"/>
+                <field name="employee_id"/>
+                <field name="department_id"/>
+                <field name="category_id"/>
+                <filter string="My Issuances" name="my" domain="[('employee_id.user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Draft" name="filter_draft" domain="[('state', '=', 'draft')]"/>
+                <filter string="Issued" name="filter_issued" domain="[('state', '=', 'issued')]"/>
+                <filter string="Returned" name="filter_returned" domain="[('state', '=', 'returned')]"/>
+                <separator/>
+                <filter string="Issue Date" name="filter_date_issue" date="date_issue"/>
+                <separator/>
+                <filter string="Archived Fixed Assets" name="archived_equipment" domain="[('equipment_id.active', '=', False)]"/>
+                <group>
+                    <filter string="Fixed Asset" name="groupby_equipment" context="{'group_by': 'equipment_id'}"/>
+                    <filter string="Employee" name="groupby_employee" context="{'group_by': 'employee_id'}"/>
+                    <filter string="Category" name="groupby_category" context="{'group_by': 'category_id'}"/>
+                    <filter string="Department" name="groupby_department" context="{'group_by': 'department_id'}"/>
+                    <filter string="Status" name="groupby_state" context="{'group_by': 'state'}"/>
+                    <filter string="Issue Date" name="groupby_date_issue" context="{'group_by': 'date_issue'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="basic_means_assignment_action" model="ir.actions.act_window">
+        <field name="name">Fixed Asset Issuances</field>
+        <field name="res_model">basic.means.assignment</field>
+        <field name="view_mode">list,kanban,form,pivot,graph,activity</field>
+        <field name="search_view_id" ref="basic_means_assignment_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Issue the first fixed asset to an employee</p>
+            <p>Select a fixed asset (equipment) and an employee, then press "Issue".
+                When the employee gives it back, press "Return".</p>
+        </field>
+    </record>
+
+    <record id="basic_means_assignment_action_kanban_equipment" model="ir.actions.act_window">
+        <field name="name">Issuance History by Fixed Asset</field>
+        <field name="res_model">basic.means.assignment</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="basic_means_assignment_view_search"/>
+        <field name="context">{'search_default_groupby_equipment': 1}</field>
+    </record>
+
+    <record id="basic_means_assignment_action_kanban_employee" model="ir.actions.act_window">
+        <field name="name">Issuance History by Employee</field>
+        <field name="res_model">basic.means.assignment</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="search_view_id" ref="basic_means_assignment_view_search"/>
+        <field name="context">{'search_default_groupby_employee': 1}</field>
+    </record>
+</odoo>

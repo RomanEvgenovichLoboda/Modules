@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="action_report_basic_means_act" model="ir.actions.report">
+        <field name="name">Fixed Asset Issuance Act</field>
+        <field name="model">basic.means.assignment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">basic_means.report_basic_means_act</field>
+        <field name="report_file">basic_means.report_basic_means_act</field>
+        <field name="print_report_name">'Act - %s - %s' % (object.name, object.employee_id.name)</field>
+        <field name="binding_model_id" ref="model_basic_means_assignment"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_basic_means_act_document">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <h2 class="text-center">Fixed Asset Issuance Act No. <span t-field="o.name">FA/2026/00001</span></h2>
+                <p class="text-center">
+                    dated <span t-field="o.date_issue">2026-10-01</span>
+                </p>
+
+                <p class="mt-4">
+                    The company <strong t-field="o.company_id.name">My Company</strong>
+                    represented by <strong t-out="o.user_id.name or ''">Mitchell Admin</strong> (the "Transferor")
+                    hands over, and the employee <strong t-field="o.employee_id.name">Marc Demo</strong>
+                    <t t-if="o.job_title">(<span t-field="o.job_title">Developer</span><t t-if="o.department_id">, <span t-field="o.department_id.name">R&amp;D</span></t>)</t>
+                    (the "Recipient") accepts for use the following fixed asset:
+                </p>
+
+                <table class="table table-sm table-bordered o_main_table mt-3">
+                    <thead>
+                        <tr>
+                            <th class="text-start">Fixed Asset</th>
+                            <th class="text-start">Model</th>
+                            <th class="text-start">Serial Number</th>
+                            <th class="text-start">Category</th>
+                            <th class="text-end">Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span t-field="o.equipment_id.name">Laptop</span></td>
+                            <td><span t-field="o.equipment_id.model">ThinkPad T14</span></td>
+                            <td><span t-field="o.equipment_id.serial_no">SN-0001</span></td>
+                            <td><span t-field="o.equipment_id.category_id.name">Computers</span></td>
+                            <td class="text-end">
+                                <span t-out="o.equipment_id.cost"
+                                    t-options="{'widget': 'monetary', 'display_currency': o.company_id.currency_id}">1000.00</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <table class="table table-borderless table-sm mt-3">
+                    <tr>
+                        <td class="w-50 ps-0"><strong>Issue date:</strong> <span t-field="o.date_issue">2026-10-01</span></td>
+                        <td class="w-50"><t t-if="o.date_return"><strong>Return date:</strong> <span t-field="o.date_return">2026-10-15</span></t></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-0"><strong>Days in use:</strong> <span t-out="o.days_count">14</span></td>
+                        <td/>
+                    </tr>
+                </table>
+
+                <div class="mt-3" t-if="not is_html_empty(o.note)">
+                    <strong>Note:</strong>
+                    <div t-field="o.note"/>
+                </div>
+
+                <p class="mt-4">
+                    The fixed asset was handed over in working condition and complete. The Recipient is
+                    responsible for keeping it safe and undertakes to return it to the warehouse on demand
+                    or upon dismissal.
+                </p>
+
+                <table class="table table-borderless mt-5" style="page-break-inside: avoid;">
+                    <tr>
+                        <td class="w-50 ps-0"><strong>Handed over (Transferor):</strong></td>
+                        <td class="w-50"><strong>Received (Recipient):</strong></td>
+                    </tr>
+                    <tr>
+                        <td class="ps-0 pt-4">______________________ / <span t-out="o.user_id.name or ''">Mitchell Admin</span>
+                            <div class="text-muted small">(signature)</div></td>
+                        <td class="pt-4">______________________ / <span t-field="o.employee_id.name">Marc Demo</span>
+                            <div class="text-muted small">(signature)</div></td>
+                    </tr>
+                </table>
+
+                <t t-if="o.state == 'returned'">
+                    <p class="mt-4">
+                        The fixed asset was returned to the warehouse on
+                        <strong t-field="o.date_return">2026-10-15</strong>.
+                    </p>
+                    <table class="table table-borderless" style="page-break-inside: avoid;">
+                        <tr>
+                            <td class="w-50 ps-0"><strong>Returned (Employee):</strong></td>
+                            <td class="w-50"><strong>Accepted (Warehouse):</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="ps-0 pt-4">______________________ / <span t-field="o.employee_id.name">Marc Demo</span>
+                                <div class="text-muted small">(signature)</div></td>
+                            <td class="pt-4">______________________ / <span t-out="o.user_id.name or ''">Mitchell Admin</span>
+                                <div class="text-muted small">(signature)</div></td>
+                        </tr>
+                    </table>
+                </t>
+                <div class="oe_structure"/>
+            </div>
+        </t>
+    </template>
+
+    <template id="report_basic_means_act">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="basic_means.report_basic_means_act_document"/>
+            </t>
+        </t>
+    </template>
+</odoo>

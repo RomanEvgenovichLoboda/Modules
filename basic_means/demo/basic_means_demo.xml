@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="basic_means_assignment_demo_1" model="basic.means.assignment">
+        <field name="equipment_id" ref="maintenance.equipment_monitor1"/>
+        <field name="employee_id" ref="hr.employee_qdp"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="date_issue" eval="(DateTime.today() - relativedelta(days=60)).strftime('%Y-%m-%d')"/>
+        <field name="date_return" eval="(DateTime.today() - relativedelta(days=15)).strftime('%Y-%m-%d')"/>
+        <field name="state">returned</field>
+    </record>
+
+    <record id="basic_means_assignment_demo_2" model="basic.means.assignment">
+        <field name="equipment_id" ref="maintenance.equipment_monitor1"/>
+        <field name="employee_id" ref="hr.employee_al"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="date_issue" eval="(DateTime.today() - relativedelta(days=10)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="basic_means_assignment_demo_3" model="basic.means.assignment">
+        <field name="equipment_id" ref="maintenance.equipment_computer3"/>
+        <field name="employee_id" ref="hr.employee_admin"/>
+        <field name="user_id" ref="base.user_admin"/>
+        <field name="date_issue" eval="(DateTime.today() - relativedelta(days=30)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="basic_means_assignment_demo_4" model="basic.means.assignment">
+        <field name="equipment_id" ref="maintenance.equipment_printer1"/>
+        <field name="employee_id" ref="hr.employee_qdp"/>
+        <field name="user_id" ref="base.user_admin"/>
+    </record>
+
+    <function model="basic.means.assignment" name="action_issue"
+        eval="[[ref('basic_means_assignment_demo_2'), ref('basic_means_assignment_demo_3')]]"/>
+</odoo>
